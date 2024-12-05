@@ -1,0 +1,390 @@
+/* 
+What to style next:
+
+1. skip to main, to the top, foucasability
+2. change the current view to mobile view
+3. prefer-reduced-motion
+4. tablet, pc view
+5. add icon picture to each timeline element
+
+*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+
+header {
+  text-align: center;
+  background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+  color: white;
+  padding: 50px 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+body {
+  font-family: Jost, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1f1f1f;
+  color: white;
+  line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #2a2a2a;
+  border-top: 3px solid #F27121;
+  color: #aaa;
+}
+
+/* Navigation */
+nav {
+    background: #2a2a2a;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  nav ul li a.active, 
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+    color: white;
+    border-radius: 5px;
+  }
+
+/* Homepage */
+/* In-Page Navigation */
+#in-page-nav {
+  background-color: #2a2a2a;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#in-page-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+
+#in-page-nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+#in-page-nav ul li a:hover, 
+#in-page-nav ul li a:focus {
+  background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+}
+
+/* Content */
+section {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+  color: #F27121;
+  margin-top: 0;
+}
+
+section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+section ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+  color: #aaa;
+}
+
+section ul li:last-child {
+  border-bottom: none;
+}
+
+section iframe {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+/* Multi-column layout for lists */
+.multi-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Emphasized terms in definitions */
+.multi-column strong {
+  color: #F27121;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Styling for analogy text */
+.multi-column em {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* List 1: Multi-column with Card-like Appearance */
+.list-1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Multi-column layout */
+  gap: 20px;
+  padding: 20px;
+}
+
+.list-1 li {
+  background-color: #2a2a2a;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  line-height: 1.5;
+}
+
+.list-1 li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+  color: #F27121; /* Highlight text on hover */
+}
+
+/* List 2: Inline Block with Highlighted Background */
+.list-2 {
+  display: flex;
+  flex-wrap: wrap; /* Wrap items to the next row */
+  gap: 10px; /* Space between items */
+  padding: 20px;
+  justify-content: center;
+}
+
+.list-2 li {
+  background-color: #F27121;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+  margin: 5px;
+}
+
+.list-2 li:hover {
+  background-color: #E94057;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+/* Section headers */
+section h2 {
+  color: #F27121;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+/* Timeline.html */
+.design-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 100px 0;
+}
+
+/* Timeline Container */
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr 3px 1fr; /* Middle line is the vertical bar */
+  gap: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Middle Vertical Line */
+.timeline-middle {
+  position: relative;
+  background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+  width: 3px; /* Line width */
+  margin: 0 auto;
+}
+
+/* Circle at the Center of Each Component */
+.timeline-circle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+  border-radius: 50%; /* Make it a circle */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  top: 50%; /* Center vertically */
+  transform: translate(-50%, -50%); /* Adjust both axes */
+  z-index: 2; /* Place above the line */
+}
+
+/* Hide line and circles when popup is active */
+.timeline.hide-line .timeline-middle,
+.timeline.hide-line .timeline-circle {
+  visibility: hidden;
+}
+
+/* Timeline Component Box */
+.timeline-component {
+  padding: 20px;
+  background: #2a2a2a;
+  box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+  border-radius: 6px;
+  margin: 1rem 0;
+  position: relative; /* Allow relative positioning for the circle */
+}
+
+/* Ensure Vertical Line Connects */
+.timeline-middle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+  transform: translateX(-50%);
+  z-index: 1; /* Place behind the circle */
+}
+
+/* Pop-up Modal */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the screen */
+    overflow-y: auto; /* Enable scrolling for the entire modal */
+    padding: 20px; /* Add padding for breathing space */
+  }
+  
+  .popup-content {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh; /* Ensure the modal content does not exceed 90% of the viewport height */
+    overflow-y: auto; /* Add scrolling within the modal content */
+    position: relative;
+  }
+  
+  .popup-content .close-btn {
+    position: absolute; /* Position close button within the modal */
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    z-index: 2; /* Ensure the button is above all content */
+  }
+  
+
+/* clustering.html */
+/* Clusters Container */
+.cluster-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible columns */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Individual Clusters */
+  .cluster {
+    background-color: #2a2a2a;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .cluster:hover, .cluster:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  }
+  
+  .cluster h2 {
+    margin-top: 0;
+    color: #F27121;
+  }
+  
+  .cluster ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cluster ul li {
+    padding: 5px 0;
+    color: #aaa;
+  }
