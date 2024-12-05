@@ -398,6 +398,15 @@ document.querySelectorAll('.timeline-content').forEach(item => {
   });
 });
 
+// Opening a pop-up when the user presses Enter
+document.querySelectorAll('.timeline-content, .cluster').forEach(item => {
+  item.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      item.click(); // Simulate a click action
+    }
+  });
+});
+
 // Close button functionality
 document.querySelector('.close-btn').addEventListener('click', () => {
   const popup = document.getElementById('popup');
@@ -407,4 +416,15 @@ document.querySelector('.close-btn').addEventListener('click', () => {
   timeline.classList.remove('hide-line'); // Show the timeline again
 });
 
+// Close pop-up modal when 'Escape' key is pressed
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') { // Check if the Escape key was pressed
+    const popup = document.getElementById('popup');
+    const timeline = document.querySelector('.timeline');
 
+    if (popup && popup.style.display === 'flex') {
+      popup.style.display = 'none'; // Hide the pop-up
+      timeline.classList.remove('hide-line'); // Show the timeline line again
+    }
+  }
+});
