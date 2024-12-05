@@ -1,7 +1,7 @@
 /* 
 What to style next:
 
-1. skip to main, to the top, foucasability
+1. skip to main, to the top, foucasability (all elements across all pages)
 2. change the current view to mobile view
 3. prefer-reduced-motion
 4. tablet, pc view
@@ -87,6 +87,8 @@ nav {
     background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
     color: white;
     border-radius: 5px;
+    text-decoration: underline;
+    font-size: 1.2em;
   }
 
 /* Homepage */
@@ -118,6 +120,8 @@ nav {
 #in-page-nav ul li a:hover, 
 #in-page-nav ul li a:focus {
   background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+  text-decoration: underline;
+  font-size: 1.2em;
 }
 
 /* Content */
@@ -296,6 +300,25 @@ section h2 {
   border-radius: 6px;
   margin: 1rem 0;
   position: relative; /* Allow relative positioning for the circle */
+  cursor: pointer; /* Indicate that the element is clickable */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.timeline-component:hover,
+.timeline-component:focus {
+  transform: translateY(-5px); /* Slightly lift the element */
+  box-shadow: 0 0 10px #F27121; /*0 8px 15px rgba(0, 0, 0, 0.7);  Add a glow/shadow effect */
+  background: linear-gradient(45deg, #F27121, #E94057, #8A2387); /* Highlight the background */
+  color: white; /* Change text color to ensure contrast */
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+
+.timeline-component h3:hover,
+.timeline-component h3:focus {
+  color: #fff; /* Ensure the header text is visible on hover */
+  text-decoration: underline;
+  font-size: 1.2em;
 }
 
 /* Ensure Vertical Line Connects */
@@ -372,6 +395,7 @@ section h2 {
   .cluster:hover, .cluster:focus {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    font-size: 1.2em; 
   }
   
   .cluster h2 {
