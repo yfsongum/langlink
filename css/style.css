@@ -250,6 +250,7 @@ section iframe {
   display: block;
   margin: 20px auto;
   max-width: 100%;
+  border: none; /* Removes the border */
 }
 
 
