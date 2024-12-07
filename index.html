@@ -7,23 +7,28 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
     <!-- General Navigation Bar -->
-    <nav id="main-nav">
+    <nav id="main-nav" aria-label="Main Site Navigation">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="timeline.html">Timeline</a></li>
         <li><a href="clustering.html">Clusters</a></li>
       </ul>
     </nav>
-  
+
     <!-- Header Section -->
     <header>
       <h1>LangLink</h1>
       <p>A beginner's guide to understanding and comparing popular programming languages.</p>
     </header>
   
+  <main id="main-content">
+    <a href="#" class="back-to-top">Back to Top</a>
+    
     <!-- In-Page Navigation -->
-    <nav id="in-page-nav">
+    <nav id="in-page-nav" aria-label="In-Page Navigation">
       <ul>
         <li><a href="#about-us">About Us</a></li>
         <li><a href="#what-programming-languages">What Programming Languages Are</a></li>
@@ -66,10 +71,6 @@
             <strong>Syntax:</strong> Rules defining how code should be written and interpreted.
             <em>Analogy: Syntax is like grammar in a language; it ensures that your sentences (code) are structured correctly to convey meaning.</em>
           </div>
-          <div>
-            <strong>Syntax:</strong> Rules defining how code should be written and interpreted. 
-            <em>Analogy:</em> Syntax is like grammar in a language; it ensures that your sentences (code) are structured correctly to convey meaning.
-          </div>
         </div>
         <p>Watch this video to learn more about programming languages:</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/EGQh5SZctaE" title="What is a Programming Language" frameborder="0" allowfullscreen></iframe>
@@ -78,7 +79,12 @@
     <!-- Why These Languages Section -->
     <section id="why-these-languages">
       <h2>Why These Programming Languages</h2>
-      <p>At LangLink, we have selected programming languages based on the <a href="https://www.tiobe.com/tiobe-index/" target="_blank">TIOBE Index</a>, a reliable measure of language popularity. The TIOBE Index reflects how widely these languages are used in the tech industry and their impact on modern technology.</p>
+      <p>
+        At LangLink, we have selected programming languages based on the 
+        <a href="https://www.tiobe.com/tiobe-index/" target="_blank" title="Opens in a new tab">TIOBE Index</a>, 
+        a reliable measure of language popularity.
+      </p>
+      
       <p>The ratings on the TIOBE Index are determined by various factors, including:</p>
       <ul class="list-1">
         <li><span>The number of skilled engineers worldwide.</span></li>
@@ -109,12 +115,22 @@
         <li>Delphi/Object Pascal</li>
         <li>Visual Basic</li>
       </ul>
-      <p>You may explore the <a href="timeline.html" title="View detailed introductions of programming languages">timeline</a> to dive into the detailed introductions of various programming languages, and uncover the <a href="clustering.html" title="Discover the relationships between programming languages">relationships between them</a> through an engaging clustering visualization.</p>
-    </section>
+      <p>
+        You may explore the 
+        <a href="timeline.html" title="View detailed introductions of programming languages">timeline</a> 
+        to dive into the detailed introductions of various programming languages.
+      </p>
+      <p>
+        Discover the 
+        <a href="clustering.html" title="Discover the relationships between programming languages">relationships between them</a> 
+        through an engaging clustering visualization.
+      </p>
       
-
-  <!-- Glossary -->
-  <section id="glossary">
+      
+    </section>
+    
+    <!-- Glossary -->
+    <section id="glossary">
     <h2>Glossary of Key Computer Science Terms</h2>
     <p>
       Our glossary provides clear and concise definitions of essential computer science terms to help you better understand programming concepts. Whether you're new to coding or brushing up on your knowledge, this section is a handy reference.
@@ -203,7 +219,8 @@
         <em>It's like a housekeeper who clears out clutter while you focus on your tasks.</em>
       </div>
     </div>
-  </section>
+    </section>
+  </main>
   
 
   <!-- Footer -->

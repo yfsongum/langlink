@@ -1,7 +1,7 @@
 // Data for each programming language
 const languages = {
   assembly: {
-    info: "Created in 1949 to provide a more human-readable way to program computers.",
+    info: "Created in 1949 to provide a more human-readable way to program computer, using mnemonic codes instead of binary machine code. It is widely used in early computer programming, embedded systems, device drivers, and situations requiring direct hardware manipulation. It has been popular as it offers precise control over hardware, essential for performance-critical applications.",
     code: `
       ; Simple Assembly code example
       section .data
@@ -26,7 +26,7 @@ const languages = {
     ]
   },
   fortran: {
-    info: "Developed in 1957 for numeric computation and scientific computing.",
+    info: "Developed in 1957 for numeric computation and scientific computing. Fortran is widely used in weather forecasting, computational physics, engineering simulations, and high-performance computing. It has been popular because it is known for its efficiency in numerical calculations and array operations, making it ideal for scientific research.",
     code: `
       PROGRAM SumArray
           IMPLICIT NONE
@@ -50,7 +50,7 @@ const languages = {
     ]
   },
   c: {
-    info: "Developed in 1972 for system programming and creating operating systems.",
+    info: "Developed in 1972 for system programming and creating operating systems. It is widely used in operating systems (like Unix), embedded systems, game development, and performance-critical applications. It has been popular because it offers a good balance between low-level access and high-level abstractions, making it versatile and efficient.",
     code: `
       #include <stdio.h>
 
@@ -372,6 +372,29 @@ const languages = {
   }
 };
 
+// Back to Top Functionality
+const backToTopButton = document.querySelector('.back-to-top');
+// Check for reduced motion preference
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
+  }
+});
+
+backToTopButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ 
+    top: 0, 
+    behavior: prefersReducedMotion ? 'auto' : 'smooth' 
+  });
+});
+
+
 // Add event listeners to timeline items
 document.querySelectorAll('.timeline-content').forEach(item => {
   item.addEventListener('click', () => {
@@ -395,8 +418,31 @@ document.querySelectorAll('.timeline-content').forEach(item => {
     // Show the modal and hide the timeline
     popup.style.display = 'flex';
     timeline.classList.add('hide-line'); // Add class to hide line
+
+    popup.style.transition = prefersReducedMotion ? 'none' : 'all 0.3s ease-in-out';
+    timeline.style.transition = prefersReducedMotion ? 'none' : 'all 0.3s ease-in-out';
   });
 });
+
+// Ensure that large content in popups wraps correctly and does not trigger horizontal scrolling
+const popupDetails = document.getElementById('popup-details');
+
+// Add a function to ensure no horizontal scrolling for content
+function adjustPopupContent() {
+  if (popupDetails) {
+    popupDetails.style.overflowWrap = 'break-word'; // Ensure text wraps properly
+    popupDetails.style.whiteSpace = 'pre-wrap'; // Preserve formatting
+  }
+}
+
+// Call the function after content is populated
+document.querySelectorAll('.timeline-content').forEach(item => {
+  item.addEventListener('click', () => {
+    adjustPopupContent();
+  });
+});
+
+
 
 // Opening a pop-up when the user presses Enter
 document.querySelectorAll('.timeline-content, .cluster').forEach(item => {
@@ -408,13 +454,20 @@ document.querySelectorAll('.timeline-content, .cluster').forEach(item => {
 });
 
 // Close button functionality
-document.querySelector('.close-btn').addEventListener('click', () => {
-  const popup = document.getElementById('popup');
-  const timeline = document.querySelector('.timeline');
-
-  popup.style.display = 'none'; // Hide the modal
-  timeline.classList.remove('hide-line'); // Show the timeline again
+document.addEventListener('DOMContentLoaded', () => {
+  const closeBtn = document.querySelector('.close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      const popup = document.getElementById('popup');
+      const timeline = document.querySelector('.timeline');
+      popup.style.display = 'none'; // Hide the popup
+      timeline.classList.remove('hide-line'); // Show timeline again
+    });
+  } else {
+    console.error('Close button not found.');
+  }
 });
+
 
 // Close pop-up modal when 'Escape' key is pressed
 document.addEventListener('keydown', (e) => {
