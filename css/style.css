@@ -1,7 +1,6 @@
 /* 
 What to style next:
 
-1. skip to main, to the top, foucasability (all elements across all pages)
 2. change the current view to mobile view
 3. prefer-reduced-motion
 4. tablet, pc view
@@ -9,19 +8,7 @@ What to style next:
 
 */
 
-
-
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
-
-header {
-  text-align: center;
-  background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
-  color: white;
-  padding: 50px 20px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
-}
 
 body {
   font-family: Jost, sans-serif;
@@ -32,6 +19,16 @@ body {
   line-height: 1.6;
 }
 
+header {
+  text-align: center;
+  background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+  color: white;
+  padding: 20px 10px; /* Reduced padding for smaller screens */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
 h1 {
     text-align: center;
     margin: 20px 0;
@@ -39,57 +36,149 @@ h1 {
 
 header h1 {
   margin: 0;
-  font-size: 2.5em;
+  font-size: 1.8em; /* Reduced font size for smaller screens */
 }
 
 header p {
-  margin-top: 10px;
-  font-size: 1.2em;
+  margin-top: 5px;
+  font-size: 1em; /* Adjusted font size */
 }
 
 footer {
   text-align: center;
   padding: 10px;
   background-color: #2a2a2a;
-  border-top: 3px solid #F27121;
+  border-top: 2px solid #F27121;
   color: #aaa;
+  font-size: 0.8em; /* Adjusted font size */
 }
+
+a {
+  color: #FF9900; /* Bright orange for higher contrast with #FFFFFF */
+  text-decoration: underline; /* Ensure links are distinguishable by style */
+}
+
+a:hover,
+a:focus {
+  color: #CC7A00; /* Darker orange for hover and focus */
+  text-decoration: underline;
+}
+
+/* Links Opening in a New Tab */
+a[target="_blank"] {
+  color: #FF9900; /* Same contrast-safe color */
+  text-decoration: underline;
+}
+
+a[target="_blank"]:hover,
+a[target="_blank"]:focus {
+  color: #CC7A00; /* Slightly darker hover state */
+  text-decoration: underline;
+}
+
+
+/* Skip to Main Content Link */
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 10px;
+  background-color: #C2185B; /* Darker pink for better contrast */
+  color: white; /* White text for readability */
+  padding: 10px;
+  z-index: 100;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  transition: top 0.3s;
+}
+
+/* Focus State */
+.skip-link:focus {
+  top: 10px;
+  background-color: #5A189A; /* Dark purple for enhanced focus visibility */
+  color: #FFFFFF; /* Ensure high contrast */
+  outline: 2px solid #FFFFFF; /* White outline for additional focus indication */
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 10px; /* Adjust positioning */
+  z-index: 1000; /* Ensure visibility */
+  background-color: #C2185B; /* Darker pink for better contrast */
+  color: white; /* White text for readability */
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 0.9em; /* Adjust font size to fit */
+  width: 50px;
+  height: 50px;
+  display: flex; /* Ensure it's always visible */
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Prevent text from overflowing */
+}
+
+/* Hover and Focus States */
+.back-to-top:hover,
+.back-to-top:focus {
+  background-color: #5A189A; /* Dark purple for distinct hover/focus state */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  text-decoration: underline;
+  font-size: 1.2em; /* Subtle enlargement on hover/focus */
+}
+
+
+/* Show Back to Top Button when Scrolling */
+.back-to-top.show {
+  display: flex;
+}
+
 
 /* Navigation */
 nav {
-    background: #2a2a2a;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 5px 10px;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  nav ul li a.active, 
-  nav ul li a:hover,
-  nav ul li a:focus {
-    background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
-    color: white;
-    border-radius: 5px;
-    text-decoration: underline;
-    font-size: 1.2em;
-  }
+  background: #2a2a2a;
+  padding: 5px 10px; /* Reduced padding for smaller screens */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items for better visual appeal */
+}  
+
+nav ul li {
+  margin: 5px 0; /* Spacing between items */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em; /* Adjusted font size */
+}
+
+
+nav ul li a.active, 
+nav ul li a:hover,
+nav ul li a:focus {
+  background: linear-gradient(45deg, #F27121, #E94057, #8A2387);
+  color: white; /* Contrast-safe color */
+  border-radius: 5px;
+  text-decoration: underline;
+  font-size: 1.2em;
+}
 
 /* Homepage */
 /* In-Page Navigation */
@@ -127,16 +216,18 @@ nav {
 /* Content */
 section {
   background-color: #2a2a2a;
-  padding: 20px;
+  padding: 15px; /* Reduced padding for smaller screens */
   border-radius: 10px;
-  margin: 20px auto;
-  max-width: 1200px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  margin: 10px auto;
+  max-width: 90%; /* Adjusted width for small screens */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 section h2 {
+  font-size: 1.5em; /* Adjusted font size */
   color: #F27121;
-  margin-top: 0;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 section ul {
@@ -161,12 +252,14 @@ section iframe {
   max-width: 100%;
 }
 
+
+
 /* Multi-column layout for lists */
 .multi-column {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack columns vertically */
+  gap: 15px;
+  padding: 10px;
 }
 
 /* Emphasized terms in definitions */
@@ -219,7 +312,7 @@ section iframe {
 
 .list-2 li {
   background-color: #F27121;
-  color: white;
+  color: black;
   padding: 10px 15px;
   border-radius: 8px;
   font-weight: bold;
@@ -229,16 +322,8 @@ section iframe {
 }
 
 .list-2 li:hover {
-  background-color: #E94057;
+  background-color: white;
   transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
-
-/* Section headers */
-section h2 {
-  color: #F27121;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 
@@ -312,13 +397,33 @@ section h2 {
   color: white; /* Change text color to ensure contrast */
   text-decoration: underline;
   font-size: 1.2em;
+  outline: 2px solid #F27121;
 }
 
-.timeline-component h3:hover,
-.timeline-component h3:focus {
-  color: #fff; /* Ensure the header text is visible on hover */
-  text-decoration: underline;
+.timeline-component h2 {
+  all: unset; /* Remove browser default styles */
+  display: block; /* Ensure it's block-level */
   font-size: 1.2em;
+  margin: 10px 0;
+  color: white;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.timeline-component h2 {
+  font-size: 1.2em; /* Match the old h3 font size */
+  margin: 10px 0; /* Override default h2 margins */
+  color: white; /* Ensure text color matches the previous styling */
+  line-height: 1.4; /* Adjust line height for consistency */
+  font-weight: normal; /* Match h3 weight if lighter */
+  text-align: center; /* Keep alignment consistent */
+}
+
+.timeline-component h2:hover,
+.timeline-component h2:focus {
+  color: #fff; /* Ensure visibility on hover */
+  text-decoration: underline;
+  font-size: 1.3em; /* Slight increase for emphasis */
 }
 
 /* Ensure Vertical Line Connects */
@@ -336,40 +441,54 @@ section h2 {
 
 /* Pop-up Modal */
 .popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: flex-start; /* Align to the top of the screen */
-    overflow-y: auto; /* Enable scrolling for the entire modal */
-    padding: 20px; /* Add padding for breathing space */
-  }
-  
-  .popup-content {
-    background: #2a2a2a;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 600px;
-    max-height: 90vh; /* Ensure the modal content does not exceed 90% of the viewport height */
-    overflow-y: auto; /* Add scrolling within the modal content */
-    position: relative;
-  }
-  
-  .popup-content .close-btn {
-    position: absolute; /* Position close button within the modal */
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    color: #fff;
-    z-index: 2; /* Ensure the button is above all content */
-  }
-  
+  display: none;
+  position: fixed;
+  top: 10%; /* Centered vertically with some margin */
+  left: 5%;
+  width: 90%; /* Constrain width to viewport */
+  max-height: 80vh; /* Prevent overflow on height */
+  background-color: rgba(0, 0, 0, 0.9); /* Slight transparency */
+  border-radius: 10px;
+  overflow-y: auto; /* Vertical scrolling for content */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  z-index: 1000; /* Ensure above other elements */
+}
+
+.popup-content {
+  padding: 15px; /* Adjust padding for readability */
+  color: white;
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+.popup-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  color: #F27121;
+  cursor: pointer;
+}
+
+.popup-content h2 {
+  font-size: 1.5em;
+}
+
+.popup-content pre {
+  white-space: pre-wrap; /* Maintain line breaks while wrapping long lines */
+  overflow-x: auto; /* Allow horizontal scrolling for long lines */
+  font-family: "Courier New", monospace; /* Use a monospace font for code */
+  font-size: 0.9em; /* Slightly smaller font size for better readability */
+  line-height: 1.4; /* Adjust line height for better spacing */
+  background: #2a2a2a; /* Consistent dark background for code blocks */
+  color: #f5f5f5; /* Light text color for good contrast */
+  padding: 10px; /* Add padding around code blocks */
+  border-radius: 5px; /* Rounded corners for a modern look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+  margin: 10px 0; /* Add spacing above and below code blocks */
+}
+
+
 
 /* clustering.html */
 /* Clusters Container */
@@ -412,3 +531,147 @@ section h2 {
     padding: 5px 0;
     color: #aaa;
   }
+
+
+/* Tablet View */
+@media screen and (min-width: 768px) {
+  header {
+    padding: 30px 20px;
+    border-radius: 15px;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  header p {
+    font-size: 1.1em;
+  }
+
+  nav ul {
+    flex-direction: row; /* Change from column to row for tablets */
+    justify-content: space-around;
+  }
+
+  section {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr 3px 1fr; /* Keep the middle line */
+    width: 90%;
+    gap: 30px;
+  }
+
+  .timeline-component {
+    padding: 25px;
+    font-size: 1.1em;
+  }
+
+  .multi-column {
+    display: grid; /* Use a grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible columns */
+    gap: 20px; /* Space between items */
+    padding: 20px;
+  }
+
+  .list-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust for glossary items */
+    gap: 20px;
+  }
+
+  .back-to-top {
+    width: 60px;
+    height: 60px;
+    font-size: 1em;
+    bottom: 30px;
+    right: 20px;
+  }
+
+  .popup {
+    max-height: 90vh; /* Allow the popup to take up more vertical space */
+    overflow-y: auto; /* Enable scrolling if content exceeds height */
+  }
+
+  .popup-content {
+    max-height: none; /* Remove restrictive height limits */
+    padding: 20px; /* Consistent padding */
+  }
+}
+
+/* PC View */
+@media screen and (min-width: 1024px) {
+  header {
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  header p {
+    font-size: 1.2em;
+  }
+
+  nav ul {
+    flex-direction: row; /* Ensure navigation stays horizontal */
+    justify-content: space-around;
+  }
+
+  section {
+    max-width: 1200px; /* Fully utilize screen width */
+    margin: 20px auto;
+    padding: 30px;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr 3px 1fr; /* Maintain structure */
+    gap: 40px;
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  .timeline-component {
+    padding: 30px;
+    font-size: 1.2em;
+  }
+
+  .multi-column {
+    gap: 30px;
+  }
+
+  .back-to-top {
+    width: 70px;
+    height: 70px;
+    font-size: 1.2em;
+    bottom: 40px;
+    right: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* General Rules */
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Specific Components */
+  .back-to-top {
+    box-shadow: none !important; /* Remove hover effects */
+  }
+
+  .timeline-component {
+    transform: none !important; /* Remove lift on hover */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5); /* Simplify shadow */
+  }
+
+  .popup {
+    transition: none !important;
+  }
+}
